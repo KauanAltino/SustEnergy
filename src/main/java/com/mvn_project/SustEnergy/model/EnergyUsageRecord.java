@@ -4,10 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import jakarta.persistence.Table;
+
 
 @Entity
+@Table(name = "energy_usage_record")
 public class EnergyUsageRecord {
 
     @Id
@@ -15,9 +21,10 @@ public class EnergyUsageRecord {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "device_id")
     private EnergyDevice device; // Associação com EnergyDevice
 
-    private LocalDateTime timestamp;
+    private LocalDate timestamp;
     private Double energyConsumed;
     private Double energyGenerated;
 
@@ -25,7 +32,7 @@ public class EnergyUsageRecord {
     public EnergyUsageRecord() {}
 
     // Construtor com parâmetros
-    public EnergyUsageRecord(EnergyDevice device, LocalDateTime timestamp, Double energyConsumed, Double energyGenerated) {
+    public EnergyUsageRecord(EnergyDevice device, LocalDate timestamp, Double energyConsumed, Double energyGenerated) {
         this.device = device;
         this.timestamp = timestamp;
         this.energyConsumed = energyConsumed;
@@ -49,11 +56,11 @@ public class EnergyUsageRecord {
         this.device = device;
     }
 
-    public LocalDateTime getTimestamp() {
+    public LocalDate getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(LocalDate timestamp) {
         this.timestamp = timestamp;
     }
 
