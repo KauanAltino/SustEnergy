@@ -37,6 +37,9 @@ public class EnergyDeviceController {
         return energyDeviceRepository.findById(id).map(device -> {
             device.setName(updatedDevice.getName());
             device.setStatus(updatedDevice.getStatus());
+            device.setType(updatedDevice.getType()); 
+            device.setCapacity(updatedDevice.getCapacity());
+            device.setUser(updatedDevice.getUser());
             return ResponseEntity.ok(energyDeviceRepository.save(device));
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }

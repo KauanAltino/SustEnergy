@@ -36,7 +36,9 @@ public class EnergyUsageRecordController {
     public ResponseEntity<EnergyUsageRecord> updateRecord(@PathVariable Long id, @RequestBody EnergyUsageRecord updatedRecord) {
         return energyUsageRecordRepository.findById(id).map(record -> {
             record.setEnergyConsumed(updatedRecord.getEnergyConsumed());
+            record.setEnergyGenerated(updatedRecord.getEnergyGenerated());
             record.setTimestamp(updatedRecord.getTimestamp());
+            record.setDevice(updatedRecord.getDevice());
             return ResponseEntity.ok(energyUsageRecordRepository.save(record));
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }

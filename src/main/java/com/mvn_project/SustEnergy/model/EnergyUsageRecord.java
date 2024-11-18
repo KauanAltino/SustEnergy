@@ -21,7 +21,7 @@ public class EnergyUsageRecord {
 
     @ManyToOne
     @JoinColumn(name = "device_id")
-    private EnergyDevice device; // Associação com EnergyDevice
+    private EnergyDevice device; 
 
     private LocalDate timestamp;
     private Double energyConsumed;
