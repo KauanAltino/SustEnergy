@@ -8,6 +8,3 @@ Funcionalidades principais
 - Registro de consumo de energia.
 - Gerenciamento de dispositivos ou fontes de energia (renováveis e não renováveis).
 - Relatórios de consumo com foco em sustentabilidade e economia.
-- Alertas e recomendações de redução de consumo ou transição para fontes renováveis.
-- Comparativos de impacto ambiental (CO₂ economizado, por exemplo).
-- Sugestões de políticas para justiça social e inclusão energética.
