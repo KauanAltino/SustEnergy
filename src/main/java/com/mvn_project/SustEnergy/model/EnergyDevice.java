@@ -34,6 +34,10 @@ public class EnergyDevice {
         this.user = user;
     }
 
+    public EnergyDevice(String string, String string2, double d, String string3, Object object) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getters e Setters
     public Long getId() {
         return id;
